@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gemin AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 10px; margin: 0; background: #f0f0f0; }
+    h1 { font-size: 1.5em; text-align: center; }
+    input { width: 100%; padding: 10px; font-size: 1em; box-sizing: border-box; }
+    button { width: 100%; padding: 10px; font-size: 1em; background: #007bff; color: white; border: none; }
+    #response { margin-top: 10px; padding: 10px; background: white; border-radius: 5px; font-size: 1em; }
+  </style>
+</head>
+<body>
+  <h1>Gemin AI Assistant</h1>
+  <input id="query" type="text" placeholder="Ask Gemin...">
+  <button onclick="askGemin()">Submit</button>
+  <div id="response">Response will appear here.</div>
+  <script src="gemin.js"></script>
+</body>
+</html>
