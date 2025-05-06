@@ -41,11 +41,22 @@ async function askGemin() {
     // Check storage availability for Android 13 Enterprise
     const storage = window.indexedDB ? "IndexedDB" : "LocalStorage";
     
-    // Load the WebAssembly module (placeholder)
+    // Load the WebAssembly module
     const wasmResponse = await fetch('gemin.wasm');
     const buffer = await wasmResponse.arrayBuffer();
     const module = await WebAssembly.compile(buffer);
-    const instance = await WebAssembly.instantiate(module);
+
+    // Provide a minimal imports object for WebAssembly.instantiate
+    const importsObject = {
+      env: {
+        memory: new WebAssembly.Memory({ initial: 256 }), // Minimal memory allocation
+        abort: () => console.log("Wasm abort called"), // Placeholder abort function
+        table: new WebAssembly.Table({ initial: 0, element: "anyfunc" }) // Placeholder table
+      }
+    };
+
+    // Instantiate the Wasm module with imports
+    const instance = await WebAssembly.instantiate(module, importsObject);
     
     // Load memory from gemin_memory.json
     const memoryResponse = await fetch('gemin_memory.json');
