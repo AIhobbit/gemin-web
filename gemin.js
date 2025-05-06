@@ -1,25 +1,10 @@
-/**
- * @license
- * Copyright 2019 Google LLC. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * =============================================================================
- */
-import './flags_wasm';
+
+import 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@latest/dist/flags_wasm';
 import { DataStorage, deprecationWarn, engine, env, KernelBackend, util } from '@tensorflow/tfjs-core';
-import * as wasmFactoryThreadedSimd_import from '../wasm-out/tfjs-backend-wasm-threaded-simd.js';
+import * as wasmFactoryThreadedSimd_import from 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@latest/dist/wasm-out/tfjs-backend-wasm-threaded-simd.js';
 // @ts-ignore
-import { wasmWorkerContents } from '../wasm-out/tfjs-backend-wasm-threaded-simd.worker.js';
-import * as wasmFactory_import from '../wasm-out/tfjs-backend-wasm.js';
+import { wasmWorkerContents } from 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@latest/dist/wasm-out/tfjs-backend-wasm-threaded-simd.worker.js';
+import * as wasmFactory_import from 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@latest/dist/wasm-out/tfjs-backend-wasm.js';
 // This workaround is required for importing in Node.js without using
 // the node bundle (for testing). This would not be necessary if we
 // flipped esModuleInterop to true, but we likely can't do that since
