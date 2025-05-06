@@ -1,6 +1,6 @@
 
 import 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@latest/dist/flags_wasm';
-import { DataStorage, deprecationWarn, engine, env, KernelBackend, util } from '@tensorflow/tfjs-core';
+import { DataStorage, deprecationWarn, engine, env, KernelBackend, util } from 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core';
 import * as wasmFactoryThreadedSimd_import from 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@latest/dist/wasm-out/tfjs-backend-wasm-threaded-simd.js';
 // @ts-ignore
 import { wasmWorkerContents } from 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@latest/dist/wasm-out/tfjs-backend-wasm-threaded-simd.worker.js';
